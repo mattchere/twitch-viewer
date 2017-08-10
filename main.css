@@ -1,5 +1,9 @@
 @import url("reset.css");
 
+a {
+    color: #DDE5FF;
+    text-decoration: none;
+}
 body {
     background-color: #DDE5FF;
     font-family: 'Lato', sans-serif;
@@ -36,5 +40,17 @@ h3 {
     width: 75px;
     height: 75px;
 }
-.main h1 {
+.main a:hover {
+    color: grey;
+}
+.main a,
+.main p {
+    display: inline-block;
+    margin-left: 20px;
+}
+.main h3 {
+    width: 200px;
+}
+.main p {
+    width: 400px;
 }

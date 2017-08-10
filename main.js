@@ -9,19 +9,19 @@ $(document).ready(function() {
             success: function(user) {
                 var name = user.display_name;
                 var logo = user.logo;
-                var link = "https://www.twitch.tv/"
-                link += streamer;
+                var userurl = "https://www.twitch.tv/"
+                userurl += streamer;
                 url = "https://wind-bow.glitch.me/twitch-api/streams/";
                 url += streamer;
                 $.ajax(url, {
                     dataType: "json",
                     success: function(stream) {
                         if (!stream.stream) {
-                            var html = formatUser(name, logo, link, null, null);
+                            var html = formatUser(name, logo, userurl, null, null);
                             $(".main").append(html);
                         }
                         else {
-                            var html = formatUser(name, logo, link, stream.stream.game, stream.stream.channel.status);
+                            var html = formatUser(name, logo, userurl, stream.stream.game, stream.stream.channel.status);
                             $(".main").append(html);
                         }
                     }
@@ -30,14 +30,18 @@ $(document).ready(function() {
         });
     });
 
-    function formatUser(name, logo, link, game, desc) {
+    function formatUser(name, logo, userurl, game, desc) {
         var html = "";
-        html += '<div><img src="' + logo + '" alt="' + name + "'s logo> ";
-        html += '<a href="' + link + '"><h3>' + name + "</h3></a>";
+        html += "<div>";
+        html += "<img src=\"" + logo + "\" alt=\"" + name + "'s logo\"><!--";
+        html += "--><a target=\"_blank\" href=\"" + userurl + "\"><h3>" + name + "</h3></a><!--";
         if (game) {
-            html += '<p>' + game + ' ' + desc + '</p>'
+            html += "--><p>" + game + " " + desc + "</p>";
         }
-        html += '</div>';
+        else {
+            html += "--><p>Offline</p>"
+        }
+        html += "</div>";
         return html;
     }
 });
