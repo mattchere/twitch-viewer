@@ -4,16 +4,19 @@ body {
     background-color: #DDE5FF;
     font-family: 'Lato', sans-serif;
     color: #DDE5FF;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .container {
     width: 800px;
     margin: 0 auto;
-    background-color: #3D5ECC;
 }
 .header {
     padding: 30px;
     margin-top: 10px;
+    background-color: #3D5ECC;
 }
 
 h1 {
@@ -25,5 +28,13 @@ h3 {
 
 .main div {
     padding: 10px;
-    margin: 10px;
+    margin: 5px 0;
+    background-color: #4C587F;
+}
+.main img {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+}
+.main h1 {
 }
