@@ -36,7 +36,7 @@ h3 {
     background-color: #4C587F;
 }
 .main img {
-    display: inline-block;
+    display: inline-block; 
     width: 75px;
     height: 75px;
 }
@@ -45,7 +45,7 @@ h3 {
 }
 .main a,
 .main p {
-    display: inline-block;
+    display: inline-block; 
     margin-left: 20px;
 }
 .main h3 {
